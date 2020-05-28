@@ -10,8 +10,8 @@ export class PostComponent implements OnInit {
   title = 'Ипотечный калькулятор';
   logo = '../18.png';
 }
-function calculator() {
-  let sum, fee, percent, term, result;
+function calculator(): void {
+  let sum: any, fee: any, percent: any, term: any, result: any;
   sum = document.getElementById('sum').nodeValue;
   sum = parseInt(sum);
   fee = document.getElementById('fee').nodeValue;
@@ -20,13 +20,13 @@ function calculator() {
   percent = parseInt(percent);
   term = document.getElementById('term').nodeValue;
   term = parseInt(term);
-  let creditAmount = sum - fee;
-  let creditRate = percent / 100 / 12;
-  let annuityPayment =
+  let creditAmount: number = sum - fee;
+  let creditRate: number = percent / 100 / 12;
+  let annuityPayment: number =
     (creditRate * Math.pow(1 + creditRate, term)) /
     (Math.pow(1 + creditRate, term) - 1);
-  let monthlyLnstallment = annuityPayment * creditAmount;
-  let overpayment = sum - monthlyLnstallment * percent;
+  let monthlyLnstallment: number = annuityPayment * creditAmount;
+  let overpayment: number = sum - monthlyLnstallment * percent;
 
   result =
     'Ежемесячный платеж' +
