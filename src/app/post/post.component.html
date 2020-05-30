@@ -21,7 +21,7 @@
     <ul>
       <li class="postLi"><span>Сумма ипотеки</span></li>
       <br />
-      <li class="postLi"><input type="text" id="sum" value="0" /></li>
+      <li class="postLi"><input type="text" id="sum" value="0" name="sum" [(ngModel)]="sum" /></li>
       <br />
       <li class="postLi"><span>Начальный взнос</span></li>
       <br />
@@ -39,7 +39,7 @@
         <input
           type="button"
           value="Ежемесячный платеж"
-          onclick="calculator()"
+          (click)="calculator()"
         />
       </li>
       <br />
